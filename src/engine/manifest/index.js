@@ -1,7 +1,7 @@
 class Manifest {
     constructor(e) {
         this._engine = e;
-        this._player = require('./player')(this, 'blob', 10, 10).create();
+        this._player = require('./player')(this, 'link', 10, 10).create();
     }
 
     tick() {

@@ -31,6 +31,8 @@ module.exports = (cb, handleProgress)=>{
         .add('light-purple', 'data:image/gif;base64,R0lGODlhAQABAPAAAP+I/////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
         .add('purple', 'data:image/gif;base64,R0lGODlhAQABAPAAAMxEzP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
         .add('dark-purple', 'data:image/gif;base64,R0lGODlhAQABAPAAAIgAiP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
+    //sheets
+        .add('link', 'res/sheets/idle.json')
     //textures
         .add('blob', 'res/textures/blob.png')
         .add('noimg', 'res/textures/noimg.png')

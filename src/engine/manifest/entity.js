@@ -4,9 +4,23 @@ module.exports = class Entity {
         init_velocity={ x:0, y:0 }
     ){
         this._manifest = m;
-        this._sprite = new PIXI.Sprite(
-            PIXI.loader.resources[texture].texture
-        );
+        this._sheet = PIXI.loader.resources[texture]
+        console.log(this._sheet);
+        if(this._sheet.extension==='json'){//animated
+            this._animated = true;
+            var frames = [];
+            frames.push(PIXI.Texture.fromFrame('idle00.png'));
+            frames.push(PIXI.Texture.fromFrame('idle01.png'));
+            frames.push(PIXI.Texture.fromFrame('idle02.png'));
+            frames.push(PIXI.Texture.fromFrame('idle01.png'));
+            this._sprite = new PIXI.extras.AnimatedSprite(frames, true);
+            this._sprite.animationSpeed = 0.1;
+            this._sprite.play();
+        } else {
+            this._animated = true;
+            this._sprite = new PIXI.Sprite(this._sheet.texture);
+        }
+
         this._subscribed_key_actions = {
             press:[],
             release:[],
